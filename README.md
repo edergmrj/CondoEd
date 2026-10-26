@@ -1,0 +1,2 @@
+# CondoEd
+Gestão de condomínio.
