@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-reboco: #eff1ed;
+  --color-folha: #fbfcfa;
+  --color-tinta: #17262b;
+  --color-tinta-2: #3f5156;
+  --color-tinta-3: #5b6c71;
+  --color-linha: #d6dcd6;
+  --color-linha-forte: #b6c0b8;
+  --color-petroleo: #0c5566;
+  --color-petroleo-esc: #083f4c;
+  --color-petroleo-claro: #dcebee;
+  --color-latao: #a8832f;
+  --color-latao-claro: #f1e8cf;
+  --color-ok: #2e7d58;
+  --color-ok-esc: #1f5a3f;
+  --color-ok-claro: #dff0e6;
+  --color-atraso: #b23a2e;
+  --color-atraso-esc: #86271e;
+  --color-atraso-claro: #f7e1de;
+  --color-aviso-esc: #6e4b08;
+  --color-aviso-claro: #f6ebcf;
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Public Sans Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    background: var(--color-reboco);
+    color: var(--color-tinta);
+    font-family: var(--font-sans);
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    min-height: 100dvh;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-petroleo);
+    outline-offset: 2px;
+  }
+  button { cursor: pointer; }
+  summary { cursor: pointer; }
+}
+
+.tnum { font-variant-numeric: tabular-nums; }
+
+@media print {
+  html, body { background: #fff !important; }
+  .no-print { display: none !important; }
+  main { padding: 0 !important; margin: 0 !important; }
+  .print-sheet { border: 0 !important; background: #fff !important; padding: 0 !important; }
+  a { color: inherit; text-decoration: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
